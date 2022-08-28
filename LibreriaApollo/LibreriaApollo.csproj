@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B5DD049-C3CE-4B94-8D27-4C946FC46BE0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LibreriaApollo</RootNamespace>
+    <AssemblyName>LibreriaApollo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>LibreriaApollo.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="apollo2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>apollo2DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="apollo2DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>apollo2DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="apolloFullDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>apolloFullDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD\Conexion.cs" />
+    <Compile Include="Controladores\controladorCategoriasProducto.cs" />
+    <Compile Include="Controladores\controladorConsultarVenta.cs" />
+    <Compile Include="Controladores\controladorDetalleVenta.cs" />
+    <Compile Include="Controladores\controladorLocalidades.cs" />
+    <Compile Include="Controladores\controladorMayoristas.cs" />
+    <Compile Include="Controladores\controladorPerfiles.cs" />
+    <Compile Include="Controladores\controladorPrincipal.cs" />
+    <Compile Include="Controladores\controladorProductos.cs" />
+    <Compile Include="Controladores\controladorRegistrarVenta.cs" />
+    <Compile Include="Controladores\controladorEmpleados.cs" />
+    <Compile Include="Controladores\controladorTiposDocumento.cs" />
+    <Compile Include="Controladores\controladorTiposPagos.cs" />
+    <Compile Include="dsVentaApilada.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsVentaApilada.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\ComboBox2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Entidades\DetalleVenta.cs" />
+    <Compile Include="Entidades\Empleado.cs" />
+    <Compile Include="fullDataSetApollo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>fullDataSetApollo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Interfaces\Estadisticas\estadisticaAntiguedadEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaAntiguedadEmpleados.Designer.cs">
+      <DependentUpon>estadisticaAntiguedadEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaCantidadVentasMensuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaCantidadVentasMensuales.Designer.cs">
+      <DependentUpon>estadisticaCantidadVentasMensuales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaClientesPorLocalidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaClientesPorLocalidades.Designer.cs">
+      <DependentUpon>estadisticaClientesPorLocalidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaGananciaApilada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaGananciaApilada.Designer.cs">
+      <DependentUpon>estadisticaGananciaApilada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaGananciasAnuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaGananciasAnuales.Designer.cs">
+      <DependentUpon>estadisticaGananciasAnuales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaProductosMasVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaProductosMasVendidos.Designer.cs">
+      <DependentUpon>estadisticaProductosMasVendidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaProductosPorCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaProductosPorCategoria.Designer.cs">
+      <DependentUpon>estadisticaProductosPorCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaTiposPagosAnuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaTiposPagosAnuales.Designer.cs">
+      <DependentUpon>estadisticaTiposPagosAnuales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaVentasPorEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaVentasPorEmpleado.Designer.cs">
+      <DependentUpon>estadisticaVentasPorEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaVentasPorLocalidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Estadisticas\estadisticaVentasPorLocalidades.Designer.cs">
+      <DependentUpon>estadisticaVentasPorLocalidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\frmConsultarVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\frmConsultarVentas.Designer.cs">
+      <DependentUpon>frmConsultarVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\frmDetalleVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\frmDetalleVenta.Designer.cs">
+      <DependentUpon>frmDetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\frmEstadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\frmEstadisticas.Designer.cs">
+      <DependentUpon>frmEstadisticas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\frmInformes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\frmInformes.Designer.cs">
+      <DependentUpon>frmInformes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\frmMayoristas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\frmMayoristas.Designer.cs">
+      <DependentUpon>frmMayoristas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\frmOpciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\frmOpciones.Designer.cs">
+      <DependentUpon>frmOpciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\frmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\frmProductos.Designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\frmRegistrarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\frmRegistrarVenta.Designer.cs">
+      <DependentUpon>frmRegistrarVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\frmEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\frmEmpleado.Designer.cs">
+      <DependentUpon>frmEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\frmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\frmVentas.Designer.cs">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeClientesMayoristas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeClientesMayoristas.Designer.cs">
+      <DependentUpon>InformeClientesMayoristas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeClientesMayoristasMayor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeClientesMayoristasMayor.Designer.cs">
+      <DependentUpon>InformeClientesMayoristasMayor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeClientesMayoristasMenor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeClientesMayoristasMenor.Designer.cs">
+      <DependentUpon>InformeClientesMayoristasMenor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeDiarioGanancias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeDiarioGanancias.Designer.cs">
+      <DependentUpon>InformeDiarioGanancias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeEmpleados.Designer.cs">
+      <DependentUpon>InformeEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeListadoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeListadoProductos.Designer.cs">
+      <DependentUpon>InformeListadoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeMensualVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeMensualVentas.Designer.cs">
+      <DependentUpon>InformeMensualVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeProductosFaltantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeProductosFaltantes.Designer.cs">
+      <DependentUpon>InformeProductosFaltantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeProductosMasVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeProductosMasVendidos.Designer.cs">
+      <DependentUpon>InformeProductosMasVendidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeProductosMenosVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeProductosMenosVendidos.Designer.cs">
+      <DependentUpon>InformeProductosMenosVendidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeTotalVentasPorCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Informes\InformeTotalVentasPorCategorias.Designer.cs">
+      <DependentUpon>InformeTotalVentasPorCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="vistaGananciaAnual.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vistaGananciaAnual.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaAntiguedadEmpleados.rdlc" />
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaAntiguedadEmpleados.resx">
+      <DependentUpon>estadisticaAntiguedadEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaCantidadVentasMensuales.rdlc" />
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaCantidadVentasMensuales.resx">
+      <DependentUpon>estadisticaCantidadVentasMensuales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaClientesPorLocalidades.rdlc" />
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaClientesPorLocalidades.resx">
+      <DependentUpon>estadisticaClientesPorLocalidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaGananciaApilada.rdlc" />
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaGananciaApilada.resx">
+      <DependentUpon>estadisticaGananciaApilada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaGananciasAnuales.rdlc" />
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaGananciasAnuales.resx">
+      <DependentUpon>estadisticaGananciasAnuales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaProductosMasVendidos.rdlc" />
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaProductosMasVendidos.resx">
+      <DependentUpon>estadisticaProductosMasVendidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaProductosPorCategoria.rdlc" />
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaProductosPorCategoria.resx">
+      <DependentUpon>estadisticaProductosPorCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaTiposPagosAnuales.rdlc" />
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaTiposPagosAnuales.resx">
+      <DependentUpon>estadisticaTiposPagosAnuales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaVentasPorEmpleado.rdlc" />
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaVentasPorEmpleado.resx">
+      <DependentUpon>estadisticaVentasPorEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaVentasPorLocalidades.rdlc" />
+    <EmbeddedResource Include="Interfaces\Estadisticas\estadisticaVentasPorLocalidades.resx">
+      <DependentUpon>estadisticaVentasPorLocalidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\frmConsultarVentas.resx">
+      <DependentUpon>frmConsultarVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\frmDetalleVenta.resx">
+      <DependentUpon>frmDetalleVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\frmEstadisticas.resx">
+      <DependentUpon>frmEstadisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\frmInformes.resx">
+      <DependentUpon>frmInformes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\frmMayoristas.resx">
+      <DependentUpon>frmMayoristas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\frmOpciones.resx">
+      <DependentUpon>frmOpciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\frmProductos.resx">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\frmRegistrarVenta.resx">
+      <DependentUpon>frmRegistrarVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\frmEmpleado.resx">
+      <DependentUpon>frmEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\frmVentas.resx">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Informes\InformeClientesMayoristas.rdlc" />
+    <EmbeddedResource Include="Interfaces\Informes\InformeClientesMayoristas.resx">
+      <DependentUpon>InformeClientesMayoristas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Informes\InformeClientesMayoristasMayor.rdlc" />
+    <EmbeddedResource Include="Interfaces\Informes\InformeClientesMayoristasMayor.resx">
+      <DependentUpon>InformeClientesMayoristasMayor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Informes\InformeClientesMayoristasMenor.rdlc" />
+    <EmbeddedResource Include="Interfaces\Informes\InformeClientesMayoristasMenor.resx">
+      <DependentUpon>InformeClientesMayoristasMenor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Informes\InformeDiarioGanancias.rdlc" />
+    <EmbeddedResource Include="Interfaces\Informes\InformeDiarioGanancias.resx">
+      <DependentUpon>InformeDiarioGanancias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Informes\InformeEmpleados.rdlc" />
+    <EmbeddedResource Include="Interfaces\Informes\InformeEmpleados.resx">
+      <DependentUpon>InformeEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Informes\InformeListadoProductos.rdlc" />
+    <EmbeddedResource Include="Interfaces\Informes\InformeListadoProductos.resx">
+      <DependentUpon>InformeListadoProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Informes\InformeMensualVentas.rdlc" />
+    <EmbeddedResource Include="Interfaces\Informes\InformeMensualVentas.resx">
+      <DependentUpon>InformeMensualVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Informes\InformeProductosFaltantes.rdlc" />
+    <EmbeddedResource Include="Interfaces\Informes\InformeProductosFaltantes.resx">
+      <DependentUpon>InformeProductosFaltantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Informes\InformeProductosMasVendidos.rdlc" />
+    <EmbeddedResource Include="Interfaces\Informes\InformeProductosMasVendidos.resx">
+      <DependentUpon>InformeProductosMasVendidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Informes\InformeProductosMenosVendidos.rdlc" />
+    <EmbeddedResource Include="Interfaces\Informes\InformeProductosMenosVendidos.resx">
+      <DependentUpon>InformeProductosMenosVendidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Informes\InformeTotalVentasPorCategorias.rdlc" />
+    <EmbeddedResource Include="Interfaces\Informes\InformeTotalVentasPorCategorias.resx">
+      <DependentUpon>InformeTotalVentasPorCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="apollo2DataSet.xsc">
+      <DependentUpon>apollo2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="apollo2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>apollo2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="apollo2DataSet.xss">
+      <DependentUpon>apollo2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="apollo2DataSet1.xsc">
+      <DependentUpon>apollo2DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="apollo2DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>apollo2DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="apollo2DataSet1.xss">
+      <DependentUpon>apollo2DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="apolloFullDataSet1.xsc">
+      <DependentUpon>apolloFullDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="apolloFullDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>apolloFullDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="apolloFullDataSet1.xss">
+      <DependentUpon>apolloFullDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dsVentaApilada.xsc">
+      <DependentUpon>dsVentaApilada.xsd</DependentUpon>
+    </None>
+    <None Include="dsVentaApilada.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsVentaApilada.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsVentaApilada.xss">
+      <DependentUpon>dsVentaApilada.xsd</DependentUpon>
+    </None>
+    <None Include="fullDataSetApollo.xsc">
+      <DependentUpon>fullDataSetApollo.xsd</DependentUpon>
+    </None>
+    <None Include="fullDataSetApollo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>fullDataSetApollo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="fullDataSetApollo.xss">
+      <DependentUpon>fullDataSetApollo.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="vistaGananciaAnual.xsc">
+      <DependentUpon>vistaGananciaAnual.xsd</DependentUpon>
+    </None>
+    <None Include="vistaGananciaAnual.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vistaGananciaAnual.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="vistaGananciaAnual.xss">
+      <DependentUpon>vistaGananciaAnual.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ApolloLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\store-2-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-fill1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-2-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-3-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-2-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-3-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booklet-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-2-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\numbers-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_5697.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_56971.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_56972.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_56973.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_56974.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-list-2-line.png" />
+    <None Include="Resources\Icon.ico" />
+    <Content Include="Icon.ico" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
